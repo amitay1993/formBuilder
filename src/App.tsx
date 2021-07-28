@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { options } from "./MockData/jsonData";
+import FormBuilder from "./Components/FormBuilder";
+
+interface Values {
+  username: string;
+  firstname: string;
+}
+
+const values: Values = {
+  username: "user1",
+  firstname: "sharon",
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // @ts-ignore
+  return <FormBuilder data={options} values={values} />;
 }
 
 export default App;
